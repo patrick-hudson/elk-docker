@@ -19,6 +19,7 @@ services:
     privileged: true
     volumes:
       - ./logstash.conf:/usr/share/logstash/config/conf.d/logstash.conf
+      - ./pipelines.yml:/usr/share/logstash/config/pipelines.yml
 
   kibana:
     links:
