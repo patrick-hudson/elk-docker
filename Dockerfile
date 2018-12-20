@@ -7,6 +7,6 @@ RUN gosu kibana bin/kibana-plugin install 'https://github.com/sivasamyk/logtrail
 ADD logstash.conf /etc/logstash/conf.d/20-docker.conf
 ADD 21-json.conf /etc/logstash/conf.d/21-json.conf
 ADD 30-output.conf /etc/logstash/conf.d/30-output.conf
-RUN mkdir -p /etc/pki/tls/certs && mkdir /etc/pki/tls/private
-ADD logstash-beats.key /etc/pki/tls/private/logstash-beats.key
-ADD logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
+RUN mkdir -p /etc/pki/tls/certs && mkdir -p /etc/pki/tls/private
+COPY logstash-beats.key /etc/pki/tls/private/logstash-beats.key
+COPY logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
