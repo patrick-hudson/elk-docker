@@ -1,7 +1,8 @@
 version: '2'
 services:
   elk:
-    image: patt1293/elk-docker
+    build: .
+    #image: patt1293/elk-docker
     ports:
       - "5601:5601"
       - "9200:9200"
