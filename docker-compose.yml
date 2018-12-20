@@ -7,5 +7,6 @@ services:
       - "9200:9200"
       - "5044:5044"
       - "12201:12201/udp"
+      - "12202:12202/udp"
     extra_hosts:
       - "elasticsearch:localhost"
